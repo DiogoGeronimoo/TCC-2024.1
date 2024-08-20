@@ -149,10 +149,10 @@ public class player : MonoBehaviour
     {
         health += value;
         //GameControler.instance.UpdateLives(health);
-
+ 
     }
 
-    void OnTriggerEnter2D(Collider2D coll)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.layer == 8)
         {
@@ -164,5 +164,8 @@ public class player : MonoBehaviour
             //GameControler.instance.GameOver();
 
         }
+        
     }
+
+    
 }

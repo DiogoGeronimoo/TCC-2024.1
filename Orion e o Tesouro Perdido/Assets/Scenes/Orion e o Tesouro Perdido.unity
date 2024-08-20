@@ -562,11 +562,11 @@ Transform:
   m_GameObject: {fileID: 806144765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49669, y: 5.0772, z: 0}
-  m_LocalScale: {x: 0.03462, y: 9.7056, z: 1}
+  m_LocalPosition: {x: -11.051011, y: 0.087200165, z: 0}
+  m_LocalScale: {x: 0.7716791, y: 9.7056, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1748563016}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &806144767
 Rigidbody2D:
@@ -928,11 +928,11 @@ Transform:
   m_GameObject: {fileID: 1696094349}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.503, y: 5.03, z: 0}
-  m_LocalScale: {x: 0.04092, y: 9.916559, z: 1}
+  m_LocalPosition: {x: 11.232061, y: 0.04000044, z: 0}
+  m_LocalScale: {x: 0.9121061, y: 9.916559, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1748563016}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1696094351
 Rigidbody2D:
@@ -1070,7 +1070,7 @@ GameObject:
   - component: {fileID: 1748563015}
   - component: {fileID: 1748563018}
   - component: {fileID: 1748563017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: chao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,9 +1141,7 @@ Transform:
   m_LocalPosition: {x: 0.0202, y: -4.99, z: 0}
   m_LocalScale: {x: 22.289982, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1696094350}
-  - {fileID: 806144766}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1748563017
@@ -1288,6 +1286,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 568955587}
   - {fileID: 431580500}
+  - {fileID: 1696094350}
+  - {fileID: 806144766}
   - {fileID: 1748563016}
   - {fileID: 511217250494775960}
   - {fileID: 404073222}
