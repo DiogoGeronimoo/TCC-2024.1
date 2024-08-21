@@ -27,7 +27,7 @@ public class player : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         //atkCollider.SetActive(false);
-        //GameControler.instance.UpdateLives(health);
+        GameControler.instance.UpdateLives(health);
         respawnPoint = transform.position;
 
     }
@@ -127,7 +127,7 @@ public class player : MonoBehaviour
     public void Damage(int dmg)
     {
         health -= dmg;
-        //GameControler.instance.UpdateLives(health);
+        GameControler.instance.UpdateLives(health);
         anim.SetTrigger("hit");
         if (health <= 0)
         {
@@ -141,14 +141,14 @@ public class player : MonoBehaviour
                 transform.position += new Vector3(0.5f, 0, 0);
             }
             //chamar game over
-            //GameControler.instance.GameOver();
+            GameControler.instance.GameOver();
         }
     }
 
     public void IncreaseLife(int value)
     {
         health += value;
-        //GameControler.instance.UpdateLives(health);
+        GameControler.instance.UpdateLives(health);
  
     }
 
@@ -161,7 +161,7 @@ public class player : MonoBehaviour
         }
         if (coll.gameObject.layer == 9)
         {
-            //GameControler.instance.GameOver();
+            GameControler.instance.GameOver();
 
         }
         

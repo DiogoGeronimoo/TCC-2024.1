@@ -6,6 +6,7 @@ public class Inimi1 : MonoBehaviour
 {
     public float speed;
     public float walkTime;
+    public int vidaIni;
     private float timer;
     private bool walkRigth = true;
     private Rigidbody2D rig;
@@ -40,5 +41,16 @@ public class Inimi1 : MonoBehaviour
         
         
         
+    }
+
+    public void Damage(int dmg)
+    {
+        vidaIni -= dmg;
+        if (vidaIni <= 0)
+        {
+            Destroy(gameObject);
+            
+        }
+
     }
 }
