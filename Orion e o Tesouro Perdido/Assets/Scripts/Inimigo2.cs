@@ -9,6 +9,7 @@ public class Inimigo2 : MonoBehaviour
     Rigidbody2D rb;
     Transform target;
     Vector2 moveDirection;
+    public int vida2ini;
 
     private void Awake()
     {
@@ -44,5 +45,16 @@ public class Inimigo2 : MonoBehaviour
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
 
         }
+    }
+    
+    public void Damage(int dmg)
+    {
+        vida2ini -= dmg;
+        if (vida2ini <= 0)
+        {
+            Destroy(gameObject);
+            
+        }
+
     }
 }
