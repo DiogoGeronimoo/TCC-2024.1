@@ -11,8 +11,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/GameController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inimigo3.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemHeart.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -95,7 +95,7 @@
       <workItem from="1724162127211" duration="1827000" />
       <workItem from="1724182842388" duration="2348000" />
       <workItem from="1724267502203" duration="2422000" />
-      <workItem from="1724335026638" duration="653000" />
+      <workItem from="1724335026638" duration="1249000" />
     </task>
     <servers />
   </component>
