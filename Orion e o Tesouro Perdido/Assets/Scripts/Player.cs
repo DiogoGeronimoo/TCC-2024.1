@@ -26,7 +26,7 @@ public class player : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        //atkCollider.SetActive(false);
+       // atkCollider.SetActive(false);
         GameControler.instance.UpdateLives(health);
         respawnPoint = transform.position;
 
@@ -117,7 +117,7 @@ public class player : MonoBehaviour
             anim.SetInteger("transition", 3);
             atkCollider.SetActive(true);
             yield return new WaitForSeconds(0.2f);
-            atkCollider.SetActive(false);
+            //atkCollider.SetActive(false);
             isFire = false;
             anim.SetInteger("transition", 0);
         }
@@ -141,6 +141,8 @@ public class player : MonoBehaviour
             {
                 transform.position += new Vector3(0.5f, 0, 0);
             }
+            
+            
             //chamar game over
             GameControler.instance.GameOver();
         }

@@ -54,10 +54,8 @@ public class Inimi1 : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.left * speed;
         }
-        barraVidaObject.transform.localScale = new Vector3(barraVidaObject.transform.localScale.x * -1, 
-                                                             barraVidaObject.transform.localScale.y,
-                                                             barraVidaObject.transform.localScale.z);
-
+        barraVidaObject.transform.localScale = new Vector3(barraVidaObject.transform.localScale.x * -1,barraVidaObject.transform.localScale.y,barraVidaObject.transform.localScale.z);  
+                                                             
 
 
     }

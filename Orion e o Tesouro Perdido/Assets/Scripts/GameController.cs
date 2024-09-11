@@ -11,11 +11,12 @@ public class GameControler : MonoBehaviour
     public int score;
     public Text scoreText;
     public int totalScore;
+    public static GameControler instance;
     public GameObject pauseObj;
     public GameObject gameOverObj;
     private bool isPaused;
-
-    public static GameControler instance;
+    
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -69,7 +70,7 @@ public class GameControler : MonoBehaviour
     public void GameOver()
     {
         gameOverObj.SetActive(true);
-        //Time.time.Scale = 0f;
+        Time.timeScale = 0f;
     }
 
     public void RestartGame()

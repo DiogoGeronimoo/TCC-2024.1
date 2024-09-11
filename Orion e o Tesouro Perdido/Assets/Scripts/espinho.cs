@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class espinho : MonoBehaviour
 {
-    public int damage = 10;
+    public int damage = 1;
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
