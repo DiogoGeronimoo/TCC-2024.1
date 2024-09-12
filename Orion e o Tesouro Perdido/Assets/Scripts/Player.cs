@@ -91,6 +91,7 @@ public class player : MonoBehaviour
                 rig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
                 isJumping = true;
+                ParticleObserver.onParticleSpawnEvent(transform.position);
             }
             else
             {
@@ -99,6 +100,7 @@ public class player : MonoBehaviour
                     anim.SetInteger("transition", 2);
                     rig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                     doubleJump = false;
+                    ParticleObserver.onParticleSpawnEvent(transform.position);
                 }
             }
         }
@@ -115,7 +117,18 @@ public class player : MonoBehaviour
         {
             isFire = true;
             anim.SetInteger("transition", 3);
-            atkCollider.SetActive(true);
+            GameObject Brow = Instantiate(this.Brow, firePoint.position, firePoint.rotation);
+            if (moviment >0)
+            {
+                Brow.transform.eulerAngles = new Vector3(0, 180, 0);
+
+            }
+            if (moviment <0)
+            {
+                Brow.transform.eulerAngles = new Vector3(0, 0, 0);
+                
+            }
+            //atkCollider.SetActive(true);
             yield return new WaitForSeconds(0.2f);
             //atkCollider.SetActive(false);
             isFire = false;
