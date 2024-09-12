@@ -145,17 +145,9 @@ public class player : MonoBehaviour
         
         if (health <= 0)
         {
-            if (transform.rotation.y == 0)
-            {
-                transform.position += new Vector3(-0.5f, 0, 0);
-            }
-
-            if (transform.rotation.y == 180)
-            {
-                transform.position += new Vector3(0.5f, 0, 0);
-            }
             
             
+            Die();
             //chamar game over
             GameControler.instance.GameOver();
         }
@@ -183,5 +175,14 @@ public class player : MonoBehaviour
         
     }
 
-    
+    public void Die()
+    {
+        // Aqui você pode adicionar a lógica para destruir o personagem
+        // Exemplo: Destruir o GameObject do jogador
+        Destroy(gameObject);
+
+        // Ou você pode adicionar lógica para reiniciar o jogo ou exibir uma tela de game over
+        // Exemplo: Recarregar o nível atual (isto é opcional)
+        // UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
 }

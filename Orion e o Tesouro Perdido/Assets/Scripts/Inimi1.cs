@@ -54,7 +54,7 @@ public class Inimi1 : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.left * speed;
         }
-        barraVidaObject.transform.localScale = new Vector3(barraVidaObject.transform.localScale.x * -1,barraVidaObject.transform.localScale.y,barraVidaObject.transform.localScale.z);  
+        //barraVidaObject.transform.localScale = new Vector3(barraVidaObject.transform.localScale.x * -1,barraVidaObject.transform.localScale.y,barraVidaObject.transform.localScale.z);  
                                                              
 
 
@@ -67,6 +67,7 @@ public class Inimi1 : MonoBehaviour
         if (vidaIni <= 0)
         {
             Destroy(gameObject);
+            Die();
             
         }
 
@@ -81,5 +82,15 @@ public class Inimi1 : MonoBehaviour
             
         }
         
+    }
+    void Die()
+    {
+        // Aqui você pode adicionar a lógica para destruir o personagem
+        // Exemplo: Destruir o GameObject do jogador
+        Destroy(gameObject);
+
+        // Ou você pode adicionar lógica para reiniciar o jogo ou exibir uma tela de game over
+        // Exemplo: Recarregar o nível atual (isto é opcional)
+        // UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
