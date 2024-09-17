@@ -115,7 +115,7 @@ public class player : MonoBehaviour
 
     IEnumerator Fire()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             isFire = true;
             anim.SetInteger("transition", 3);

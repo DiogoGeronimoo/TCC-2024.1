@@ -67,7 +67,7 @@ public class Inimi1 : MonoBehaviour
         if (vidaIni <= 0)
         {
             Destroy(gameObject);
-            Die();
+            
             
         }
 
@@ -81,15 +81,5 @@ public class Inimi1 : MonoBehaviour
             
         }
         
-    }
-    void Die()
-    {
-        // Aqui você pode adicionar a lógica para destruir o personagem
-        // Exemplo: Destruir o GameObject do jogador
-        Destroy(gameObject);
-
-        // Ou você pode adicionar lógica para reiniciar o jogo ou exibir uma tela de game over
-        // Exemplo: Recarregar o nível atual (isto é opcional)
-        // UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
