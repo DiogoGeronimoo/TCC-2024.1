@@ -77,7 +77,6 @@ public class Inimi1 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("bateu!");
             collision.gameObject.GetComponent<player>().Damage(damage);
             
         }
