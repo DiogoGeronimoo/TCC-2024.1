@@ -35,8 +35,8 @@ public class Brow : MonoBehaviour
         
     }
     
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollision(Collider2D collision)
     {
         if (collision.gameObject.tag == "Inimigo")
         {
