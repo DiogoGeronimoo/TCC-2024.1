@@ -11,6 +11,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AudioObserver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Brow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inimigo3.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ParticleObserver.cs" root0="FORCE_HIGHLIGHTING" />
@@ -97,7 +99,7 @@
       <workItem from="1725563044178" duration="140000" />
       <workItem from="1726073066991" duration="4966000" />
       <workItem from="1726096929709" duration="6297000" />
-      <workItem from="1726569650788" duration="2802000" />
+      <workItem from="1726569650788" duration="8879000" />
     </task>
     <servers />
   </component>

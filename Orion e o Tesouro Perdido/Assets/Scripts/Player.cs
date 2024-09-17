@@ -92,6 +92,7 @@ public class player : MonoBehaviour
                 doubleJump = true;
                 isJumping = true;
                 ParticleObserver.onParticleSpawnEvent(transform.position);
+                AudioObsever.OnPlaySfxEvent("pulo");
             }
             else
             {
@@ -101,6 +102,7 @@ public class player : MonoBehaviour
                     rig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                     doubleJump = false;
                     ParticleObserver.onParticleSpawnEvent(transform.position);
+                    AudioObsever.OnPlaySfxEvent("pulo");
                 }
             }
         }
@@ -118,19 +120,17 @@ public class player : MonoBehaviour
             isFire = true;
             anim.SetInteger("transition", 3);
             GameObject Brow = Instantiate(this.Brow, firePoint.position, firePoint.rotation);
-            if (moviment >0)
+            if (transform.rotation.y == 0)
             {
-                Brow.transform.eulerAngles = new Vector3(0, 180, 0);
+                Brow.GetComponent<Brow>().isRigth = true;
 
             }
-            if (moviment <0)
+            if (transform.rotation.y == 180)
             {
-                Brow.transform.eulerAngles = new Vector3(0, 0, 0);
+                Brow.GetComponent<Brow>().isRigth = false;
                 
             }
-            //atkCollider.SetActive(true);
             yield return new WaitForSeconds(0.2f);
-            //atkCollider.SetActive(false);
             isFire = false;
             anim.SetInteger("transition", 0);
         }
@@ -141,7 +141,7 @@ public class player : MonoBehaviour
     {
         health -= dmg;
         GameControler.instance.UpdateLives(health);
-        anim.SetTrigger("hit");
+        //anim.SetTrigger("hit");
         
         if (health <= 0)
         {
