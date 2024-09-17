@@ -145,11 +145,9 @@ public class player : MonoBehaviour
         
         if (health <= 0)
         {
-            
-            
             Die();
-            //chamar game over
             GameControler.instance.GameOver();
+            AudioObsever.OnStopMusicEvent();
         }
     }
 
@@ -177,12 +175,6 @@ public class player : MonoBehaviour
 
     public void Die()
     {
-        // Aqui você pode adicionar a lógica para destruir o personagem
-        // Exemplo: Destruir o GameObject do jogador
         Destroy(gameObject);
-
-        // Ou você pode adicionar lógica para reiniciar o jogo ou exibir uma tela de game over
-        // Exemplo: Recarregar o nível atual (isto é opcional)
-        // UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }

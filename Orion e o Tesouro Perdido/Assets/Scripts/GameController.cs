@@ -69,7 +69,6 @@ public class GameControler : MonoBehaviour
 
     public void GameOver()
     {
-        AudioObsever.OnStopMusicEvent();
         gameOverObj.SetActive(true);
         Time.timeScale = 0f;
     }

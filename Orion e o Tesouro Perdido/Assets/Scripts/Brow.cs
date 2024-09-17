@@ -34,14 +34,14 @@ public class Brow : MonoBehaviour
         
         
     }
-    
-
-    private void OnCollision(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (collision.gameObject.tag == "Inimigo")
+        if (col.gameObject.tag == "Inimigo")
         {
-            collision.GetComponent<Inimi1>().Damage(damage);
+            col.gameObject.GetComponent<Inimi1>().Damage(damage);
             Destroy(gameObject);
         }
     }
+    
+    
 }
