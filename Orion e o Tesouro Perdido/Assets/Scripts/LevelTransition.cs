@@ -3,14 +3,14 @@ using UnityEngine.SceneManagement; // Importante para gerenciar as cenas
 
 public class LevelTransition : MonoBehaviour
 {
-     // Nome da próxima cena
-    
-    private void OnCollisionEnter2D(Collision2D col)
+    public string nextSceneName; // Nome da próxima cena
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (col.gameObject.tag == "Player")
+        if (other.CompareTag("Player")) // Verifique se o objeto que entrou no trigger tem a tag "Player"
         {
-            SceneManager.LoadScene("Fase2");
+            // Carregar a próxima cena
+            SceneManager.LoadScene(nextSceneName);
         }
     }
-    
 }
