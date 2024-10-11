@@ -13,6 +13,7 @@ public class player : MonoBehaviour
     public bool isJumping;
     public bool doubleJump;
     
+    
 
     private bool isFire;
     private Rigidbody2D rig;
@@ -47,13 +48,11 @@ public class player : MonoBehaviour
 
     void Move()
     {
-        // se nao precionar nada o valor e 0.se precionar Direita, valor e 1. Esquerda valor minimo -1.
-        float moviment = Input.GetAxis("Horizontal");
         
-        // adiciona velocidade ao corpo do personagem no eixo x e y
+        float moviment = Input.GetAxis("Horizontal");
         rig.velocity = new Vector2(moviment * speed, rig.velocity.y);
         
-        //andando pra direita
+        
         if (moviment > 0)
         {
             if(!isJumping)
@@ -64,7 +63,6 @@ public class player : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
         
-        //andando pra esquerda
         else if (moviment < 0)
         {
             if(!isJumping)
@@ -177,4 +175,5 @@ public class player : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    
 }
