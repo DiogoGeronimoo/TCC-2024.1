@@ -27,7 +27,6 @@ public class player : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-       // atkCollider.SetActive(false);
         GameControler.instance.UpdateLives(health);
         respawnPoint = transform.position;
 
