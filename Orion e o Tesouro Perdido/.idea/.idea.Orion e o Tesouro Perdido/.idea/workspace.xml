@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inimigos/Coruja.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Chave.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -99,7 +100,7 @@
       <workItem from="1726600010584" duration="2543000" />
       <workItem from="1728603036313" duration="3098000" />
       <workItem from="1729011821145" duration="5069000" />
-      <workItem from="1729187150539" duration="3575000" />
+      <workItem from="1729187150539" duration="4164000" />
     </task>
     <servers />
   </component>
