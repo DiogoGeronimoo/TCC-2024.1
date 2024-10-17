@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class player : MonoBehaviour
@@ -142,11 +143,11 @@ public class player : MonoBehaviour
         
         if (transform.rotation.y == 0)
         {
-            transform.position += new Vector3(-1,0, 0);
+            transform.position += new Vector3(-5,0, 0);
         }
         if (transform.rotation.y == 180)
         {
-            transform.position += new Vector3(1,0, 0);
+            transform.position += new Vector3(5,0, 0);
         }
         
         
@@ -184,5 +185,13 @@ public class player : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Raio"))
+        {
+            speed += ++speed;
+
+        }
+    }
 }

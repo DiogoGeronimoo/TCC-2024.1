@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Velocidade2x : MonoBehaviour
@@ -15,4 +16,5 @@ public class Velocidade2x : MonoBehaviour
     {
         
     }
+    
 }

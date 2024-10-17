@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Inimigo
   - inimigo
+  - Raio
   layers:
   - Default
   - TransparentFX
