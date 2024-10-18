@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6313726, g: 0.027450982, b: 0.043137256, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1791,7 +1791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &906584277
 Transform:
   m_ObjectHideFlags: 0
@@ -2345,11 +2345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7314578745528431501, guid: 3b1a9713cbff447488068311c94358e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7647934
+      value: -1.24
       objectReference: {fileID: 0}
     - target: {fileID: 7314578745528431501, guid: 3b1a9713cbff447488068311c94358e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4999924
+      value: -3.47
       objectReference: {fileID: 0}
     - target: {fileID: 7314578745528431501, guid: 3b1a9713cbff447488068311c94358e9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4254,9 +4254,21 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 6.8633385
       objectReference: {fileID: 0}
+    - target: {fileID: 5305639624421936194, guid: 8031de7f453b3c94aa2bf3ccf2bbb3e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305639624421936194, guid: 8031de7f453b3c94aa2bf3ccf2bbb3e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.09
+      objectReference: {fileID: 0}
     - target: {fileID: 7766310321223510483, guid: 8031de7f453b3c94aa2bf3ccf2bbb3e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.85
+      value: 18.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766310321223510483, guid: 8031de7f453b3c94aa2bf3ccf2bbb3e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 8360721506501300370, guid: 8031de7f453b3c94aa2bf3ccf2bbb3e0, type: 3}
       propertyPath: m_Size.x
