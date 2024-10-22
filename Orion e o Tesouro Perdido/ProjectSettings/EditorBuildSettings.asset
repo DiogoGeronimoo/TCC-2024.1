@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6914bed7055d16e4ead40ff1803653f6
   - enabled: 1
+    path: Assets/Scenes/CutScenes.unity
+    guid: b1dede162406a5b41817b838ea9a5144
+  - enabled: 1
     path: Assets/Scenes/Orion e o Tesouro Perdido.unity
     guid: ac18fef51b1507a4ab58c318b1225fdb
   - enabled: 1

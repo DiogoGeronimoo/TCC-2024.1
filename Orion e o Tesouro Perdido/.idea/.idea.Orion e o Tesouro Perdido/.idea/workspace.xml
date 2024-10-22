@@ -11,6 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CutScenes/CarregarCena.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inimigos/Coruja.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Chave.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -35,9 +36,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "D:\\Users\\20211170150035\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "D:\\Users\\20211170150035\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "D:\\Users\\20211170150035\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\20211170150014\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\20211170150014\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\20211170150014\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -102,6 +103,7 @@
       <workItem from="1729011821145" duration="5069000" />
       <workItem from="1729187150539" duration="4164000" />
       <workItem from="1729606263929" duration="346000" />
+      <workItem from="1729622314130" duration="1434000" />
     </task>
     <servers />
   </component>
