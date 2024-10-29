@@ -6,7 +6,7 @@ public class Cam : MonoBehaviour
 {
     private Transform player;
     public float smooth;
-    // função que faz o personagem atacar
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -16,7 +16,7 @@ public class Cam : MonoBehaviour
     // Atualiza alguma coisa da camera
     void Update()
     {
-        if(player.position.x >= -1.45 && player.position.x <= 327.5 )
+        if(player.position.x >= -1.45 && player.position.x <= 328.49 )
         {
             Vector3 following = new Vector3(player.position.x, transform.position.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, following, smooth * Time.deltaTime);
