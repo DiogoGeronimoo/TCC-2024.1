@@ -670,7 +670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1114204576
 RectTransform:
   m_ObjectHideFlags: 0
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7d4314398ad294283d6ea6c0c88d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cenaParaCarregar: 
+  cenaParaCarregar: Orion e o Tesouro Perdido
 --- !u!1 &1398757185
 GameObject:
   m_ObjectHideFlags: 0

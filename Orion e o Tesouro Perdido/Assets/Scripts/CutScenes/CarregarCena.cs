@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class CarregarCena : MonoBehaviour
 {
-    public void LoadGame()
+    public string cenaParaCarregar;
+    // Start is called before the first frame update
+    void Start()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(cenaParaCarregar);
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

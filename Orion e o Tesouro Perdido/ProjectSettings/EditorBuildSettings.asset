@@ -15,12 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Orion e o Tesouro Perdido.unity
     guid: ac18fef51b1507a4ab58c318b1225fdb
   - enabled: 1
+    path: Assets/Scenes/Fase3.unity
+    guid: 219d713c5a7701a479fdb6a1ea0006c0
+  - enabled: 0
     path: Assets/Scenes/Fase2.unity
     guid: e6b5bc41a9a81ac4489214d55356d23a
-  - enabled: 1
-    path: Assets/Scenes/Fase3.unity
-    guid: 3ccb3d951352b5b4f8ae4793b2d48119
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FaseVItoria.unity
     guid: 28191341ba1cecb4cbd3e4ab88cccfeb
   m_configObjects: {}
