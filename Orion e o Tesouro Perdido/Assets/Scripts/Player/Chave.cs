@@ -10,7 +10,7 @@ public class Chave : MonoBehaviour
         {
             if (col.gameObject.tag == "Player")
             {
-                col.gameObject.GetComponent<player>().IncreaseLife(scoreValue);
+                GameControler.instance.UpdateScore(scoreValue);
                 Destroy(gameObject);
             }
         }

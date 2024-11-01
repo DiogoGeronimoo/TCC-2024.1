@@ -75,7 +75,6 @@ public class GameControler : MonoBehaviour
 
     public void RestartGame()
     {
-        AudioObsever.OnPlayMusicEvent();
         SceneManager.LoadScene(2);
 
     }

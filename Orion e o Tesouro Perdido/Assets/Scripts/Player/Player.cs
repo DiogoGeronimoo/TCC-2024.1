@@ -55,17 +55,18 @@ public class player : MonoBehaviour
         
         if (moviment > 0)
         {
-            if(!isJumping)
+            if(!isJumping && !isFire)
             {
                 anim.SetInteger("transition", 0);
             }
             
             transform.eulerAngles = new Vector3(0, 0, 0);
+            
         }
         
         else if (moviment < 0)
         {
-            if(!isJumping)
+            if(!isJumping && !isFire)
             {
                 anim.SetInteger("transition", 0);
             } 
@@ -108,30 +109,31 @@ public class player : MonoBehaviour
 
     void BrowFire()
     {
-        StartCoroutine("Fire");
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            StartCoroutine("Fire");
+        }
     }
 
     IEnumerator Fire()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        isFire = true;
+        anim.SetInteger("transition", 3);
+        GameObject Brow = Instantiate(this.Brow, firePoint.position, firePoint.rotation);
+        if (transform.rotation.y == 0)
         {
-            isFire = true;
-            anim.SetInteger("transition", 3);
-            GameObject Brow = Instantiate(this.Brow, firePoint.position, firePoint.rotation);
-            if (transform.rotation.y == 0)
-            {
-                Brow.GetComponent<Brow>().isRigth = true;
+            Brow.GetComponent<Brow>().isRigth = true;
 
-            }
-            if (transform.rotation.y == 180)
-            {
-                Brow.GetComponent<Brow>().isRigth = false;
-                
-            }
-            yield return new WaitForSeconds(0.2f);
-            isFire = false;
-            anim.SetInteger("transition", 0);
         }
+        if (transform.rotation.y == 180)
+        {
+            Brow.GetComponent<Brow>().isRigth = false;
+                
+        }
+        yield return new WaitForSeconds(.3f);
+        isFire = false;
+        anim.SetInteger("transition", 0);
+        
         
     }
 
