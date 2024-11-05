@@ -3,7 +3,7 @@ using UnityEngine;
 public class FallingPlatform : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float fallDelay = 0.5f; 
+    public float fallDelay = 0.2f; 
     private bool isPlayerOnPlatform = false;
 
     void Start()
@@ -37,7 +37,7 @@ public class FallingPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerOnPlatform = false; 
-            fallDelay = 0.5f; 
+            fallDelay = 0.2f; 
         }
     }
 }
