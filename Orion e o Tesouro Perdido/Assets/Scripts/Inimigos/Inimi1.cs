@@ -44,10 +44,7 @@ public class Inimi1 : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.left * speed;
         }
-         
-                                                             
-
-
+        
     }
 
     public void Damage(int dmg)

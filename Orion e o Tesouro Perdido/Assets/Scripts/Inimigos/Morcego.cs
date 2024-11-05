@@ -4,26 +4,33 @@ public class Morcego : MonoBehaviour
 {
     public int VidaMorcego;
     public int damage = 1;
-    public Transform player; // Referência ao jogador
-    public float speed = 3f; // Velocidade de movimento do inimigo
-    public float attackRange = 5f; // Distância para começar o ataque
-    public float detectionRange = 10f; // Distância para detectar o jogador
+    public Transform player; 
+    public float speed = 3f; 
+    public float attackRange = 5f; 
+    public float detectionRange = 10f;
+    public float distance = 10f;
 
-    private Vector3 initialPosition; // Posição inicial do inimigo
+    private Vector2 startPosition;   
+          
+
+    
+
+    private Vector3 initialPosition; 
 
     void Start()
     {
         initialPosition = transform.position;
+        startPosition = transform.position;
     }
 
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        // Detectar jogador
+        
         if (distanceToPlayer < detectionRange)
         {
-            // Se estiver no alcance de ataque, mover em direção ao jogador
+            
             if (distanceToPlayer < attackRange)
             {
                 MoveTowardsPlayer();
@@ -31,10 +38,16 @@ public class Morcego : MonoBehaviour
         }
         else
         {
-            // Voltar para a posição inicial se o jogador sair do alcance
+            
             ReturnToInitialPosition();
         }
+       
+        float movement = Mathf.PingPong(Time.time * speed, distance) - (distance / 2);
+        transform.position = new Vector2(startPosition.x + movement, transform.position.y);
+        
+        
     }
+    
 
     void MoveTowardsPlayer()
     {
@@ -50,7 +63,6 @@ public class Morcego : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        // Desenhar o alcance de ataque e detecção no editor para visualização
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
         
