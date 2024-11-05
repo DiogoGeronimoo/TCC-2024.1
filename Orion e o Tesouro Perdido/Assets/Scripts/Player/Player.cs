@@ -188,12 +188,15 @@ public class player : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.collider.CompareTag("Raio"))
+        if (other.CompareTag("Raio"))
         {
-            speed += ++speed;
+            speed += +4;
+
 
         }
+  
     }
+
 }
