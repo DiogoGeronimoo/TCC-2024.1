@@ -126,3 +126,4 @@ MonoBehaviour:
   attackRange: 5
   detectionRange: 10
   distance: 10
+  walkTime: 3

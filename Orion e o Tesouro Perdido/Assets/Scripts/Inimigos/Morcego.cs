@@ -14,7 +14,8 @@ public class Morcego : MonoBehaviour
     public float walkTime;
     
 
-    private Vector2 startPosition; 
+    private Vector2 startPosition;
+    private Animator anim;
     private Rigidbody2D rig;  
     private Vector3 initialPosition; 
 
