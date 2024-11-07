@@ -9,6 +9,8 @@ public class Morcego : MonoBehaviour
     public float attackRange = 5f; 
     public float detectionRange = 10f;
     public float distance = 10f;
+    public float movement;
+    
 
     private Vector2 startPosition;   
           
@@ -44,6 +46,7 @@ public class Morcego : MonoBehaviour
        
         float movement = Mathf.PingPong(Time.time * speed, distance) - (distance / 2);
         transform.position = new Vector2(startPosition.x + movement, transform.position.y);
+        
         
         
     }
