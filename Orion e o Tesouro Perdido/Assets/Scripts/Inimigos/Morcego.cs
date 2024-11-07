@@ -9,55 +9,77 @@ public class Morcego : MonoBehaviour
     public float attackRange = 5f; 
     public float detectionRange = 10f;
     public float distance = 10f;
-    public float movement;
+    private float timer;
+    private bool walkRigth = true;
+    public float walkTime;
     
 
-    private Vector2 startPosition;   
-          
-
-    
-
+    private Vector2 startPosition; 
+    private Rigidbody2D rig;  
     private Vector3 initialPosition; 
 
     void Start()
     {
         initialPosition = transform.position;
         startPosition = transform.position;
+        rig = GetComponent<Rigidbody2D>();
     }
-
-    void Update()
+    void FixedUpdate()
     {
+        timer += Time.deltaTime;
+    
+        // Se o tempo de patrulha passar, inverter o movimento (direita/esquerda)
+        if (timer >= walkTime)
+        {
+            walkRigth = !walkRigth;
+            timer = 0f;
+        }
+
+        // Calculando a distância do morcego para o jogador
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        
+        // Se o jogador está dentro do raio de detecção
         if (distanceToPlayer < detectionRange)
         {
-            
+            // Se estiver dentro do raio de ataque, o morcego segue o jogador
             if (distanceToPlayer < attackRange)
             {
+                MoveTowardsPlayer();
+            }
+            else
+            {
+                // Se o jogador está dentro do raio de detecção mas fora do raio de ataque, o morcego ainda segue
                 MoveTowardsPlayer();
             }
         }
         else
         {
-            
-            ReturnToInitialPosition();
+            // Se o jogador não está mais no raio de detecção, patrulha da esquerda para a direita
+            Patrol();
         }
-       
-        float movement = Mathf.PingPong(Time.time * speed, distance) - (distance / 2);
-        transform.position = new Vector2(startPosition.x + movement, transform.position.y);
-        
-        
-        
     }
-    
 
+// Função para mover o morcego em direção ao jogador
     void MoveTowardsPlayer()
     {
         Vector3 direction = (player.position - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
     }
 
+// Função de patrulha (anda da direita para a esquerda)
+    void Patrol()
+    {
+        if (walkRigth)
+        {
+            transform.eulerAngles = new Vector2(0, 180);  // Vira para a direita
+            rig.velocity = Vector2.right * speed;  // Move para a direita
+        }
+        else
+        {
+            transform.eulerAngles = new Vector2(0, 0);  // Vira para a esquerda
+            rig.velocity = Vector2.left * speed;  // Move para a esquerda
+        }
+    }
     void ReturnToInitialPosition()
     {
         Vector3 direction = (initialPosition - transform.position).normalized;
