@@ -36,12 +36,20 @@ public class Brow : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Inimigo")
+        if (col.gameObject.CompareTag("Inimigo 1"))
         {
             col.gameObject.GetComponent<Inimi1>().Damage(damage);
             Destroy(gameObject);
         }
+
+        if (col.gameObject.CompareTag("Inimigo 2"))
+        {
+            col.gameObject.GetComponent<Morcego>().Damage(damage);
+            Destroy(gameObject);
+            
+        }
     }
+
     
     
 }

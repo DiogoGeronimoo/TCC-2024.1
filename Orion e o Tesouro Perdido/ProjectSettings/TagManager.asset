@@ -8,6 +8,9 @@ TagManager:
   - inimigo
   - Raio
   - chao
+  - Inimogo 1
+  - Inimigo 1
+  - Inimigo 2
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - 
   - Jump
   - Game Over
-  - 
+  - inimigo
   - 
   - 
   - 

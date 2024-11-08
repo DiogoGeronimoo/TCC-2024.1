@@ -14,6 +14,8 @@ public class Inimi1 : MonoBehaviour
     private float timer;
     private bool walkRigth = true;
     private Rigidbody2D rig;
+
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,7 @@ public class Inimi1 : MonoBehaviour
         vidaIni -= dmg;
         if (vidaIni <= 0)
         {
+            anim.SetInteger("morte",0);
             Destroy(gameObject);
             
             

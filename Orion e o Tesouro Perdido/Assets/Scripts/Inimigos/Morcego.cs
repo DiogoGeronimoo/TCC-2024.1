@@ -29,14 +29,14 @@ public class Morcego : MonoBehaviour
     {
         timer += Time.deltaTime;
     
-        // Se o tempo de patrulha passar, inverter o movimento (direita/esquerda)
+        
         if (timer >= walkTime)
         {
             walkRigth = !walkRigth;
             timer = 0f;
         }
 
-        // Calculando a distância do morcego para o jogador
+        
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         // Se o jogador está dentro do raio de detecção
@@ -55,12 +55,12 @@ public class Morcego : MonoBehaviour
         }
         else
         {
-            // Se o jogador não está mais no raio de detecção, patrulha da esquerda para a direita
+            
             Patrol();
         }
     }
 
-// Função para mover o morcego em direção ao jogador
+
     void MoveTowardsPlayer()
     {
         Vector3 direction = (player.position - transform.position).normalized;
@@ -101,6 +101,7 @@ public class Morcego : MonoBehaviour
         VidaMorcego -= dmg;
         if (VidaMorcego <= 0)
         {
+            anim.SetInteger("morte",0);
             Destroy(gameObject);
             
         }
