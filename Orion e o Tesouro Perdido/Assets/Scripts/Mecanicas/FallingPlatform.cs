@@ -39,5 +39,10 @@ public class FallingPlatform : MonoBehaviour
             isPlayerOnPlatform = false; 
             fallDelay = 0.2f; 
         }
+
+        if (collision.gameObject.CompareTag("GameOver"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

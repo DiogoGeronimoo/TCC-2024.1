@@ -193,9 +193,8 @@ public class player : MonoBehaviour
         if (other.CompareTag("Raio"))
         {
             speed += +4;
-
-
         }
+        
   
     }
 

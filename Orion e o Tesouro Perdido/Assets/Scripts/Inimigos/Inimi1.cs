@@ -54,7 +54,6 @@ public class Inimi1 : MonoBehaviour
         vidaIni -= dmg;
         if (vidaIni <= 0)
         {
-            anim.SetInteger("morte",0);
             Destroy(gameObject);
             
             

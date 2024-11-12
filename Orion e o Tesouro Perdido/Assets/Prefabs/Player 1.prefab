@@ -108,6 +108,8 @@ MonoBehaviour:
   firePoint: {fileID: 5935977330734064095}
   isJumping: 0
   doubleJump: 0
+  jumpSound: {fileID: 8300000, guid: 96be9097a30c0244ba867d5a21a55531, type: 3}
+  attackSound: {fileID: 0}
   atkCollider: {fileID: 0}
 --- !u!61 &6571985583006576513
 BoxCollider2D:

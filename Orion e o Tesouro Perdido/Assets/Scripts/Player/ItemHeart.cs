@@ -6,13 +6,14 @@ using UnityEngine;
 public class ItemHeart : MonoBehaviour
 {
     public int healthValue;
-
-    private void OnCollisionEnter2D(Collision2D col)
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (col.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            col.gameObject.GetComponent<player>().IncreaseLife(healthValue);
+            other.gameObject.GetComponent<player>().IncreaseLife(healthValue);
             Destroy(gameObject);
+              
         }
     }
 }

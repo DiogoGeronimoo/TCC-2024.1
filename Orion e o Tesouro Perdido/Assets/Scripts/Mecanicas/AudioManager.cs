@@ -1,70 +1,38 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
-    public static AudioManager Instance;
-    public AudioSource musicSource, sfxSource;
-    public AudioClip clipPulo;
+    public AudioClip jumpSound;    // Áudio do pulo
+    public AudioClip attackSound;  // Áudio do ataque
+    private AudioSource audioSource;
 
-    private void Awake()
+    void Start()
     {
-        if (Instance == null)
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Jump")) // Verifica se o botão de pulo foi pressionado
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-
+            Jump();
         }
-        else
+
+        if (Input.GetButtonDown("Fire1")) // Verifica se o botão de ataque foi pressionado
         {
-            Destroy(gameObject);
+            Attack();
         }
     }
 
-    private void OnEnable()
+    void Jump()
     {
-        AudioObsever.PlayMusicEvent += TocarMusica;
-        AudioObsever.PlayMusicEvent += PararMusica;
-        AudioObsever.PlaySfxEvent += TocarEfeitoSonoro;
-
-    }
-    
-
-    private void OnDisable()
-    {
-        AudioObsever.PlayMusicEvent -= TocarMusica;
-        AudioObsever.PlayMusicEvent -= PararMusica;
-        AudioObsever.PlaySfxEvent -= TocarEfeitoSonoro;
+        // Coloque aqui a lógica de pulo do personagem
+        audioSource.PlayOneShot(jumpSound); // Toca o som do pulo
     }
 
-    void TocarEfeitoSonoro(string nomeDoClip)
+    void Attack()
     {
-        switch (nomeDoClip)
-        {
-            case "pulo":
-                sfxSource.PlayOneShot(clipPulo);
-                break;
-            case "Coletavel":
-                sfxSource.PlayOneShot(clipPulo);
-                break;
-            default:
-                Debug.LogError($"efeito sonoro {nomeDoClip} nao encontrado");
-                break;
-            
-        }
-        
-    }
-
-    void TocarMusica()
-    {
-        musicSource.Play();
-    }
-    
-    void PararMusica()
-    {
-        musicSource.Stop();
+        // Coloque aqui a lógica de ataque do personagem
+        audioSource.PlayOneShot(attackSound); // Toca o som do ataque
     }
 }
-
