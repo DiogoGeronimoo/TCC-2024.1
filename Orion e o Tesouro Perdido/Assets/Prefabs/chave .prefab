@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6167437320380987163}
   - component: {fileID: 5526041354858115738}
-  - component: {fileID: 7928739859279747921}
   - component: {fileID: 228664638595201243}
+  - component: {fileID: 666293760487010628}
   m_Layer: 0
   m_Name: 'chave '
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 820887089bdd82346b91993dbeab75e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a69b481ab9d4ffb4b816865690244eac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,8 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7928739859279747921
-BoxCollider2D:
+--- !u!114 &228664638595201243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928985014935866242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2736a1187f9d74d40b2b17dba211bc75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 1
+--- !u!58 &666293760487010628
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,29 +131,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.14341342, y: 0.010243833}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.18, y: 1.59}
-    newSize: {x: 3.18, y: 1.59}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.020642053, y: 0.0838849}
   serializedVersion: 2
-  m_Size: {x: 2.4834206, y: 1.4465865}
-  m_EdgeRadius: 0
---- !u!114 &228664638595201243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928985014935866242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2736a1187f9d74d40b2b17dba211bc75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 1
+  m_Radius: 2.435473
