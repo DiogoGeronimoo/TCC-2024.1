@@ -13,6 +13,8 @@ public class player : MonoBehaviour
     public Transform firePoint;
     public bool isJumping;
     public bool doubleJump;
+    public GameObject dialogueObj;
+    private bool withParticle = false;
     
     
 
@@ -39,6 +41,17 @@ public class player : MonoBehaviour
         Move();
         Jump();
         BrowFire();
+
+        if (withParticle == true)
+        {
+            dialogueObj.SetActive(true);
+        }
+        
+        else if (withParticle == false)
+        {
+            dialogueObj.SetActive(false);
+        }
+        
     }
 
      void FixedUpdate()
@@ -188,14 +201,41 @@ public class player : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator PegarPowerUp()
+    {
+        speed += 4;
+
+        yield return new WaitForSeconds(10f);
+
+        speed -= 4;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Raio"))
         {
-            speed += +4;
+            StartCoroutine(PegarPowerUp());
         }
         
   
     }
+    
+    void OnTriggerStay2D(Collider2D other){
+        if(other.gameObject.CompareTag("Particula"))
+        {
+            Debug.Log("TA AQ");
+            withParticle = true;
+            dialogueObj.SetActive(true);
+        }
+    }
+    
+    void OnTriggerExit2D(Collider2D other){
+        if(other.gameObject.CompareTag("Particula"))
+        {
+            Debug.Log("saiu");
+            withParticle = false;
+            dialogueObj.SetActive(false);
+        }
+    }
+    
 
 }
