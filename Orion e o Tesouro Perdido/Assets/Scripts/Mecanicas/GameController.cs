@@ -17,6 +17,8 @@ public class GameControler : MonoBehaviour
     private bool isPaused;
     
     
+    
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,6 +29,7 @@ public class GameControler : MonoBehaviour
     void Start()
     {
         totalScore = PlayerPrefs.GetInt("score");
+        
 
     }
 
@@ -78,4 +81,8 @@ public class GameControler : MonoBehaviour
         SceneManager.LoadScene(2);
 
     }
+
+    
+    
+    
 }

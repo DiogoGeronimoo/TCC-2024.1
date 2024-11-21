@@ -1,89 +1,119 @@
 using UnityEngine;
 
-public class EnemyBear : MonoBehaviour
+public class UrsoBoss : MonoBehaviour
 {
-    public float moveSpeed = 2f;           // Velocidade do movimento do urso
-    public float detectionRange = 10f;      // Distância de detecção do personagem
-    public float attackRange = 5f;         // Distância para atacar o personagem
-    public Transform player;               // Referência para o personagem
-    public float attackCooldown = 1f;      // Tempo de cooldown entre ataques
-    private float lastAttackTime = 0f;     // Tempo do último ataque
+    public int VidaBoss;
+    public int damage = 1;
+    public Transform player; 
+    public float speed = 3f; 
+    public float attackRange = 5f; 
+    public float detectionRange = 10f;
+    public float distance = 10f;
+    private float timer;
+    private bool walkRigth = true;
+    public float walkTime;
+    
 
-    private enum State
+    private Vector2 startPosition;
+    private Animator anim;
+    private Rigidbody2D rig;  
+    private Vector3 initialPosition; 
+
+    void Start()
     {
-        Patrol,
-        Chase,
-        Attack
+        initialPosition = transform.position;
+        startPosition = transform.position;
+        rig = GetComponent<Rigidbody2D>();
+    }
+    void FixedUpdate()
+    {
+        timer += Time.deltaTime;
+    
+        
+        if (timer >= walkTime)
+        {
+            walkRigth = !walkRigth;
+            timer = 0f;
+        }
+
+        
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // Se o jogador está dentro do raio de detecção
+        if (distanceToPlayer < detectionRange)
+        {
+            // Se estiver dentro do raio de ataque, o morcego segue o jogador
+            if (distanceToPlayer < attackRange)
+            {
+                MoveTowardsPlayer();
+            }
+            else
+            {
+                // Se o jogador está dentro do raio de detecção mas fora do raio de ataque, o morcego ainda segue
+                MoveTowardsPlayer();
+            }
+        }
+        else
+        {
+            
+            Patrol();
+        }
     }
 
-    private State currentState = State.Patrol;
 
-    void Update()
+    void MoveTowardsPlayer()
     {
-        switch (currentState)
-        {
-            case State.Patrol:
-                Patrol();
-                break;
-            case State.Chase:
-                ChasePlayer();
-                break;
-            case State.Attack:
-                AttackPlayer();
-                break;
-        }
-
-        // Verificar a detecção do jogador
-        if (Vector2.Distance(transform.position, player.position) <= detectionRange)
-        {
-            currentState = State.Chase;
-        }
-        else if (Vector2.Distance(transform.position, player.position) <= attackRange && Time.time - lastAttackTime >= attackCooldown)
-        {
-            currentState = State.Attack;
-        }
-        else if (Vector2.Distance(transform.position, player.position) > detectionRange)
-        {
-            currentState = State.Patrol;
-        }
+        Vector3 direction = (player.position - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
     }
 
+// Função de patrulha (anda da direita para a esquerda)
     void Patrol()
     {
-        // O urso patrulha (Aqui você pode definir um caminho simples ou movimento aleatório)
-        // Exemplo de movimentação simples (aqui você pode ajustar para um sistema mais avançado, como waypoints)
-
-        transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-
-        // Se o urso ver o jogador, começa a perseguição
-        if (Vector2.Distance(transform.position, player.position) <= detectionRange)
+        if (walkRigth)
         {
-            currentState = State.Chase;
+            transform.eulerAngles = new Vector2(0, 180);  // Vira para a direita
+            rig.velocity = Vector2.left * speed;  // Move para a direita
+        }
+        else
+        {
+            transform.eulerAngles = new Vector2(0, 0);  // Vira para a esquerda
+            rig.velocity = Vector2.right * speed;  // Move para a esquerda
         }
     }
-
-    void ChasePlayer()
+    void ReturnToInitialPosition()
     {
-        // Move em direção ao jogador
-        Vector2 direction = (player.position - transform.position).normalized;
-        transform.Translate(direction * moveSpeed * Time.deltaTime);
-
-        // Verificar se está perto o suficiente para atacar
-        if (Vector2.Distance(transform.position, player.position) <= attackRange)
-        {
-            currentState = State.Attack;
-        }
+        Vector3 direction = (initialPosition - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
     }
 
-    void AttackPlayer()
+    void OnDrawGizmosSelected()
     {
-        // Atacar o jogador (pode ser um simples dano, animação, etc)
-        Debug.Log("Urso atacou o jogador!");
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
+    }
+    
+    public void Damage(int dmg)
+    {
+        VidaBoss -= dmg;
+        if (VidaBoss <= 0)
+        {
+            anim.SetInteger("morte",0);
+            Destroy(gameObject);
+            
+        }
 
-        // Registrar o tempo do último ataque
-        lastAttackTime = Time.time;
-
-        // Voltar para o estado de perseguição após o ataque
-        currentState = State.Chase;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<player>().Damage(damage);
+            
+        }
+        
     }
 }

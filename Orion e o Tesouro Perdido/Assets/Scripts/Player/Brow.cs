@@ -48,6 +48,12 @@ public class Brow : MonoBehaviour
             Destroy(gameObject);
             
         }
+        if (col.gameObject.CompareTag("Inimigo 3"))
+        {
+            col.gameObject.GetComponent<UrsoBoss>().Damage(damage);
+            Destroy(gameObject);
+            
+        }
     }
 
     
