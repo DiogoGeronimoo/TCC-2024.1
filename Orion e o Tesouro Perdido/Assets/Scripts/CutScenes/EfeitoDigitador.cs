@@ -11,7 +11,7 @@ public class EfeitoDigitador : MonoBehaviour
     private AudioSource _audioSource;
     private string mensagemOriginal;
     public bool imprimindo;
-    public float tempoEntreLetras = 0.08f;
+    public float tempoEntreLetras = 0.16f;
 
     private void Awake()
     {
