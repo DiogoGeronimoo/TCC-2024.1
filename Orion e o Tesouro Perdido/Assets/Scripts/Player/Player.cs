@@ -41,6 +41,7 @@ public class player : MonoBehaviour
         Move();
         Jump();
         BrowFire();
+        
 
         if (withParticle == true)
         {
