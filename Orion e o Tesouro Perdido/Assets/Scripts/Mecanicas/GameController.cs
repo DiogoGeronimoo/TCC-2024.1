@@ -37,7 +37,7 @@ public class GameControler : MonoBehaviour
     void Update()
     {
         PauseGame();
-        
+
     }
 
     public void UpdateScore(int value)
@@ -51,6 +51,7 @@ public class GameControler : MonoBehaviour
     {
         healthText.text = "x" + value.ToString();
     }
+    
 
     public void PauseGame()
     {
@@ -79,6 +80,11 @@ public class GameControler : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(2);
+
+    }
+    public void Quit()
+    {
+        SceneManager.LoadScene(0);
 
     }
 
