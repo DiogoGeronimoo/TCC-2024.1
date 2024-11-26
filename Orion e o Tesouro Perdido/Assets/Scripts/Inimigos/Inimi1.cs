@@ -16,15 +16,13 @@ public class Inimi1 : MonoBehaviour
     private Rigidbody2D rig;
 
     private Animator anim;
-    // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
 
     }
     
-
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         

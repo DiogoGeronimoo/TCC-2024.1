@@ -1,17 +1,16 @@
 using UnityEngine;
-using UnityEngine.UI; // Para manipular a UI
+using UnityEngine.UI;
 
 public class NPCDialogue : MonoBehaviour
 {
-    public string[] dialogueLines; // Linhas de diálogo que o NPC dirá
-    public GameObject dialogueUI; // Referência à interface de diálogo
-    public Text dialogueText; // Texto que exibe as falas
-    private int currentLineIndex = 0; // Índice da fala atual
-    private bool isPlayerNearby = false; // Verifica se o jogador está próximo
+    public string[] dialogueLines; 
+    public GameObject dialogueUI; 
+    public Text dialogueText;
+    private int currentLineIndex = 0; 
+    private bool isPlayerNearby = false;
 
     void Update()
     {
-        // Verifica se o jogador pressionou a tecla de interação
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
             ShowNextLine();
@@ -27,9 +26,8 @@ public class NPCDialogue : MonoBehaviour
         }
         else
         {
-            // Finaliza o diálogo
             dialogueUI.SetActive(false);
-            currentLineIndex = 0; // Reseta o índice para um futuro diálogo
+            currentLineIndex = 0;
         }
     }
 

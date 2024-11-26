@@ -12,11 +12,9 @@ public class Cam : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
     }
-
-    // Atualiza alguma coisa da camera
     void Update()
     {
-        if(player.position.x >= -1.45 && player.position.x <= 367.4 )
+        if(player.position.x >= -1.45 && player.position.x <= 369.32 )
         {
             Vector3 following = new Vector3(player.position.x, transform.position.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, following, smooth * Time.deltaTime);

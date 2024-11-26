@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    public AudioClip jumpSound;    // Áudio do pulo
-    public AudioClip attackSound;  // Áudio do ataque
+    public AudioClip jumpSound; 
+    public AudioClip attackSound; 
     private AudioSource audioSource;
 
     void Start()
@@ -13,12 +13,12 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump")) // Verifica se o botão de pulo foi pressionado
+        if (Input.GetButtonDown("Jump")) 
         {
             Jump();
         }
 
-        if (Input.GetButtonDown("Fire1")) // Verifica se o botão de ataque foi pressionado
+        if (Input.GetButtonDown("Fire1")) 
         {
             Attack();
         }
@@ -26,13 +26,11 @@ public class CharacterController : MonoBehaviour
 
     void Jump()
     {
-        // Coloque aqui a lógica de pulo do personagem
-        audioSource.PlayOneShot(jumpSound); // Toca o som do pulo
+        audioSource.PlayOneShot(jumpSound); 
     }
 
     void Attack()
     {
-        // Coloque aqui a lógica de ataque do personagem
-        audioSource.PlayOneShot(attackSound); // Toca o som do ataque
+        audioSource.PlayOneShot(attackSound); 
     }
 }

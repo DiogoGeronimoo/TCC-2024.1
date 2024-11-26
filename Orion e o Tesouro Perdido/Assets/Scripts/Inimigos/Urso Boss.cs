@@ -38,18 +38,15 @@ public class UrsoBoss : MonoBehaviour
 
         
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Se o jogador está dentro do raio de detecção
+        
         if (distanceToPlayer < detectionRange)
         {
-            // Se estiver dentro do raio de ataque, o morcego segue o jogador
             if (distanceToPlayer < attackRange)
             {
                 MoveTowardsPlayer();
             }
             else
             {
-                // Se o jogador está dentro do raio de detecção mas fora do raio de ataque, o morcego ainda segue
                 MoveTowardsPlayer();
             }
         }
@@ -66,19 +63,18 @@ public class UrsoBoss : MonoBehaviour
         Vector3 direction = (player.position - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
     }
-
-// Função de patrulha (anda da direita para a esquerda)
+    
     void Patrol()
     {
         if (walkRigth)
         {
-            transform.eulerAngles = new Vector2(0, 180);  // Vira para a direita
-            rig.velocity = Vector2.left * speed;  // Move para a direita
+            transform.eulerAngles = new Vector2(0, 180); 
+            rig.velocity = Vector2.left * speed; 
         }
         else
         {
-            transform.eulerAngles = new Vector2(0, 0);  // Vira para a esquerda
-            rig.velocity = Vector2.right * speed;  // Move para a esquerda
+            transform.eulerAngles = new Vector2(0, 0); 
+            rig.velocity = Vector2.right * speed;  
         }
     }
     void ReturnToInitialPosition()
