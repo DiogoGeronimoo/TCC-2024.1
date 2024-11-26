@@ -169,7 +169,7 @@ public class player : MonoBehaviour
         
         if (health <= 0)
         {
-            Die();
+            Destroy(gameObject);
             GameControler.instance.GameOver();
             AudioObsever.OnStopMusicEvent();
         }
@@ -197,10 +197,7 @@ public class player : MonoBehaviour
         
     }
 
-    public void Die()
-    {
-        Destroy(gameObject);
-    }
+    
 
     IEnumerator PegarPowerUp()
     {

@@ -14,6 +14,7 @@ public class GameControler : MonoBehaviour
     public static GameControler instance;
     public GameObject pauseObj;
     public GameObject gameOverObj;
+    public GameObject creditosObj;
     private bool isPaused;
     
     
@@ -86,6 +87,12 @@ public class GameControler : MonoBehaviour
     {
         SceneManager.LoadScene(0);
 
+    }
+    
+    public void Creditos()
+    {
+        creditosObj.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     

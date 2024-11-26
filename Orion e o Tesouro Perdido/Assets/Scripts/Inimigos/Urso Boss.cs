@@ -101,10 +101,11 @@ public class UrsoBoss : MonoBehaviour
         VidaBoss -= dmg;
         if (VidaBoss <= 0)
         {
-            anim.SetInteger("morte",0);
             Destroy(gameObject);
+            GameControler.instance.Creditos();
             
         }
+        
 
     }
     private void OnCollisionEnter2D(Collision2D collision)

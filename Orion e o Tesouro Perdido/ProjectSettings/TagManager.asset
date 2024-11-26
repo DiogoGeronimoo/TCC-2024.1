@@ -13,6 +13,7 @@ TagManager:
   - Inimigo 2
   - GameOver
   - Particula
+  - Inimigo 3
   layers:
   - Default
   - TransparentFX
