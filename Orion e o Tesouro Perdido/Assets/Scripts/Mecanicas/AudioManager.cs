@@ -1,36 +1,23 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    public AudioClip jumpSound; 
-    public AudioClip attackSound; 
-    private AudioSource audioSource;
+    public static AudioManager instance;
 
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
 
-    void Update()
+    private void Awake()
     {
-        if (Input.GetButtonDown("Jump")) 
+        if (instance == null)
         {
-            Jump();
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-        if (Input.GetButtonDown("Fire1")) 
+        else
         {
-            Attack();
+            Destroy(gameObject);
         }
-    }
-
-    void Jump()
-    {
-        audioSource.PlayOneShot(jumpSound); 
-    }
-
-    void Attack()
-    {
-        audioSource.PlayOneShot(attackSound); 
+        
     }
 }
