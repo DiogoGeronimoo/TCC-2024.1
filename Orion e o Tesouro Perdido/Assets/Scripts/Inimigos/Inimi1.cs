@@ -19,6 +19,7 @@ public class Inimi1 : MonoBehaviour
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
     }
     
@@ -52,7 +53,8 @@ public class Inimi1 : MonoBehaviour
         vidaIni -= dmg;
         if (vidaIni <= 0)
         {
-            Destroy(gameObject);
+            anim.SetTrigger("morte");
+            Destroy(gameObject, 0.5f);
             
             
         }

@@ -24,6 +24,7 @@ public class Morcego : MonoBehaviour
         initialPosition = transform.position;
         startPosition = transform.position;
         rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     void FixedUpdate()
     {
@@ -99,7 +100,8 @@ public class Morcego : MonoBehaviour
         VidaMorcego -= dmg;
         if (VidaMorcego <= 0)
         {
-            Destroy(gameObject);
+            anim.SetTrigger("morte");
+            Destroy(gameObject, 0.5f);
             
         }
 
