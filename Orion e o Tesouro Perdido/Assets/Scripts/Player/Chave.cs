@@ -6,15 +6,22 @@ using UnityEngine;
 
 public class Chave : MonoBehaviour
 {
-    public int scoreChave;
-    
+    public int scoreValue;
+    private AudioSource sound;
 
-       private void OnTriggerEnter2D(Collider2D other)
+    private void Awake()
+    {
+        sound = GetComponent<AudioSource>();
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
        {
            if (other.CompareTag("Player"))
            {
-               GameControler.instance.UpdateScore(scoreChave);
-               Destroy(gameObject);
+               sound.Play();
+               GameControler.instance.UpdateScore(scoreValue);
+               Destroy(gameObject, 0.2f);
               
            }
        }

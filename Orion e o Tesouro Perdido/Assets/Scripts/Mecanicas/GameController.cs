@@ -9,8 +9,11 @@ public class GameControler : MonoBehaviour
 {
     public Text healthText;
     public int score;
+    public int score1;
+    public Text scoreText1;
     public Text scoreText;
     public int totalScore;
+    public int totalScore1;
     public static GameControler instance;
     public GameObject pauseObj;
     public GameObject gameOverObj;
@@ -38,7 +41,7 @@ public class GameControler : MonoBehaviour
     void Start()
     {
         totalScore = PlayerPrefs.GetInt("score");
-        
+        totalScore1 = PlayerPrefs.GetInt("score1");
 
     }
 
@@ -54,6 +57,13 @@ public class GameControler : MonoBehaviour
         score += value;
         scoreText.text = score.ToString();
         PlayerPrefs.SetInt("score", score + totalScore);
+    }
+
+    public void UpdateScore1(int value)
+    {
+        score1 += value;
+        scoreText1.text = score1.ToString();
+        PlayerPrefs.SetInt("score1", score1 + totalScore1);
     }
 
     public void UpdateLives(int value)

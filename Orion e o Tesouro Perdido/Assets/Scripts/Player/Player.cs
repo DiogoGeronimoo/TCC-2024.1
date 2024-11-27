@@ -17,7 +17,8 @@ public class player : MonoBehaviour
     private bool withParticle = false;
     
     
-
+    
+     
     private bool isFire;
     private Rigidbody2D rig;
     private Animator anim;
@@ -32,6 +33,7 @@ public class player : MonoBehaviour
         anim = GetComponent<Animator>();
         GameControler.instance.UpdateLives(health);
         respawnPoint = transform.position;
+        
 
     }
 
@@ -65,7 +67,6 @@ public class player : MonoBehaviour
         
         float moviment = Input.GetAxis("Horizontal");
         rig.velocity = new Vector2(moviment * speed, rig.velocity.y);
-        
         
         if (moviment > 0)
         {
