@@ -93,7 +93,7 @@ public class GameControler : MonoBehaviour
     public void GameOver()
     {
         gameOverObj.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
     }
 
     public void RestartGame()
@@ -114,7 +114,8 @@ public class GameControler : MonoBehaviour
     }
 
     public void ReiniciarFase()
-    {
+    { 
+        gameOverObj.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
