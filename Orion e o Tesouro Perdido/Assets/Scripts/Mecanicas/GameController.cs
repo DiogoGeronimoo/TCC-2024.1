@@ -95,6 +95,11 @@ public class GameControler : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void ReiniciarFase()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     
     
     

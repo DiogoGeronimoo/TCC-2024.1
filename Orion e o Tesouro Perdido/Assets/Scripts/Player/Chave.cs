@@ -6,15 +6,14 @@ using UnityEngine;
 
 public class Chave : MonoBehaviour
 {
-    public int scoreValue;
-   
-
+    public int scoreChave;
+    
 
        private void OnTriggerEnter2D(Collider2D other)
        {
            if (other.CompareTag("Player"))
            {
-               GameControler.instance.UpdateScore(scoreValue);
+               GameControler.instance.UpdateScore(scoreChave);
                Destroy(gameObject);
               
            }
