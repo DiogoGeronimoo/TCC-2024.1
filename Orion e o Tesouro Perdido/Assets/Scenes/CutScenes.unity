@@ -518,8 +518,6 @@ PlayableDirector:
     value: {fileID: 1572975806}
   - key: {fileID: 5860446360741920224, guid: f900a07cfe4cec54eb6a1a4dc5191561, type: 2}
     value: {fileID: 1413748260}
-  - key: {fileID: -8235711451215466209, guid: f900a07cfe4cec54eb6a1a4dc5191561, type: 2}
-    value: {fileID: 0}
   - key: {fileID: -4657890586176632973, guid: f900a07cfe4cec54eb6a1a4dc5191561, type: 2}
     value: {fileID: 1114204575}
   - key: {fileID: 658140857384571632, guid: f900a07cfe4cec54eb6a1a4dc5191561, type: 2}
@@ -536,6 +534,8 @@ PlayableDirector:
     value: {fileID: 1540016265}
   - key: {fileID: -8579315386081016916, guid: f900a07cfe4cec54eb6a1a4dc5191561, type: 2}
     value: {fileID: 309644837}
+  - key: {fileID: 7685800220929695833, guid: f900a07cfe4cec54eb6a1a4dc5191561, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &194475187
@@ -2665,8 +2665,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1759566045}
-  - component: {fileID: 1759566044}
   - component: {fileID: 1759566043}
+  - component: {fileID: 1759566044}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
