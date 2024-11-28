@@ -104,6 +104,7 @@ public class GameControler : MonoBehaviour
     public void Quit()
     {
         SceneManager.LoadScene(0);
+        Destroy(gameObject);
 
     }
     
