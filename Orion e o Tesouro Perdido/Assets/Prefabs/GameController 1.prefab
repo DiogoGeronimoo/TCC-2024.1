@@ -2057,8 +2057,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Ol\xE1 Orion bem-vindo a floresta\nEstas ser\xE3o as teclas utilizadas
-    para movimenta\xE7\xE3o, pulo e pause. Tocando duas vezes na tecla de espa\xE7o
-    voc\xEA obt\xE9m pulo duplo e a tecla \"P\" usada para pausar o jogo!"
+    para movimenta\xE7\xE3o, pulo e pause. O pulo com a tecla \"Espa\xE7o\", as setas
+    para movimenta\xE7\xE3o e tecla \"P\" usada para pausar o jogo!"
 --- !u!1 &6214795339958108734
 GameObject:
   m_ObjectHideFlags: 0

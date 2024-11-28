@@ -108,17 +108,6 @@ public class player : MonoBehaviour
                 ParticleObserver.onParticleSpawnEvent(transform.position);
                 AudioObsever.OnPlaySfxEvent("pulo");
             }
-            else
-            {
-                if (doubleJump)
-                {
-                    anim.SetInteger("transition", 2);
-                    rig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-                    doubleJump = false;
-                    ParticleObserver.onParticleSpawnEvent(transform.position);
-                    AudioObsever.OnPlaySfxEvent("pulo");
-                }
-            }
         }
     }
 
@@ -170,7 +159,17 @@ public class player : MonoBehaviour
         
         if (health <= 0)
         {
-            Destroy(gameObject);
+            anim.SetTrigger("morte");
+            
+            if (transform.rotation.y == 0)
+            {
+                transform.position += new Vector3(-5,0, 0);
+            }
+            if (transform.rotation.y == 180)
+            {
+                transform.position += new Vector3(5,0, 0);
+            }
+            Destroy(gameObject, 0.5f);
             GameControler.instance.GameOver();
             AudioObsever.OnStopMusicEvent();
         }
@@ -193,6 +192,7 @@ public class player : MonoBehaviour
         if (coll.gameObject.layer == 9)
         {
             GameControler.instance.GameOver();
+            Destroy(gameObject);
 
         }
         
@@ -218,24 +218,29 @@ public class player : MonoBehaviour
   
     }
     
+    
     void OnTriggerStay2D(Collider2D other){
         if(other.gameObject.CompareTag("Particula"))
         {
-            Debug.Log("TA AQ");
             withParticle = true;
             dialogueObj.SetActive(true);
         }
     }
-    
-    void OnTriggerExit2D(Collider2D other){
-        if(other.gameObject.CompareTag("Particula"))
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Particula"))
         {
-            Debug.Log("saiu");
             withParticle = false;
             dialogueObj.SetActive(false);
         }
     }
     
     
+
+
+
+
+
 
 }
