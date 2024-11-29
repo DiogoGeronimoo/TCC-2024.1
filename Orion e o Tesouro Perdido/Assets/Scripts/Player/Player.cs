@@ -15,7 +15,7 @@ public class player : MonoBehaviour
     public bool doubleJump;
     public GameObject dialogueObj;
     private bool withParticle = false;
-    
+    private AudioSource sound;
     
     
      
@@ -33,7 +33,8 @@ public class player : MonoBehaviour
         anim = GetComponent<Animator>();
         GameControler.instance.UpdateLives(health);
         respawnPoint = transform.position;
-        
+        sound = GetComponent<AudioSource>();
+
 
     }
 
@@ -101,6 +102,7 @@ public class player : MonoBehaviour
         {
             if (!isJumping)
             {
+                sound.Play();
                 anim.SetInteger("transition", 2);
                 rig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
