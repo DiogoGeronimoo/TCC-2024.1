@@ -7,9 +7,7 @@ public class bau : MonoBehaviour
 {
         public string nomeProximaFase;
     
-
-        
-
+    
 
         private void OnCollisionEnter2D(Collision2D other)
         {

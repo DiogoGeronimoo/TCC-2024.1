@@ -16,13 +16,14 @@ public class Chave : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other)
-       {
-           if (other.CompareTag("Player"))
-           {
-               sound.Play();
-               GameControler.instance.UpdateScore(scoreValue);
-               Destroy(gameObject, 0.2f);
-              
-           }
-       }
+    {
+        if (other.CompareTag("Player"))
+        {
+            sound.Play();
+            GameControler.instance.UpdateScore(scoreValue);
+            Destroy(gameObject, 0.2f);
+
+        }
+    }
+
 }

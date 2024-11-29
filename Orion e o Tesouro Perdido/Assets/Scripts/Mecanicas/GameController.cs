@@ -118,6 +118,12 @@ public class GameControler : MonoBehaviour
     { 
         gameOverObj.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+    }
+
+    public void JogarNovamente()
+    {
+        SceneManager.LoadScene(0);
     }
 
     
