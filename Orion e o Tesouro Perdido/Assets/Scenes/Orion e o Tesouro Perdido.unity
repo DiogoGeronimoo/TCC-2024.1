@@ -8988,17 +8988,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7314578745528431501, guid: 3b1a9713cbff447488068311c94358e9, type: 3}
   m_PrefabInstance: {fileID: 580339879}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &582965475 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6551803489021997207, guid: 6a799ba3e4e378646a7a05a4313658ae, type: 3}
-  m_PrefabInstance: {fileID: 1227384871982222330}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &584882719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6167437320380987163, guid: ba66f9766d567744db30d5a6cd57bb42, type: 3}
@@ -21745,6 +21734,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1015957986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4314699440875757591, guid: 6a799ba3e4e378646a7a05a4313658ae, type: 3}
+  m_PrefabInstance: {fileID: 1227384871982222330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1016923332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6167437320380987163, guid: ba66f9766d567744db30d5a6cd57bb42, type: 3}
@@ -25401,11 +25395,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba66f9766d567744db30d5a6cd57bb42, type: 3}
---- !u!1 &1631886302 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5087233055007775085, guid: 6a799ba3e4e378646a7a05a4313658ae, type: 3}
-  m_PrefabInstance: {fileID: 1227384871982222330}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1645104373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27254,8 +27243,8 @@ MonoBehaviour:
   dialogueLines:
   - Ola Orion, outra aventura em!
   - Cuidado com os buracos a frente
-  dialogueUI: {fileID: 1631886302}
-  dialogueText: {fileID: 582965475}
+  dialogueUI: {fileID: 0}
+  dialogueText: {fileID: 0}
 --- !u!61 &1827224353
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30049,7 +30038,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5087233055007775085, guid: 6a799ba3e4e378646a7a05a4313658ae, type: 3}
+    - {fileID: 27549360268045938, guid: 6a799ba3e4e378646a7a05a4313658ae, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a799ba3e4e378646a7a05a4313658ae, type: 3}
@@ -30167,6 +30158,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4314701464708492635, guid: 3defe1a944053ca4d81a138fd85ce39d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4383129559505171641, guid: 3defe1a944053ca4d81a138fd85ce39d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -30178,7 +30173,7 @@ PrefabInstance:
     - target: {fileID: 5098565193854174271, guid: 3defe1a944053ca4d81a138fd85ce39d, type: 3}
       propertyPath: dialogueObj
       value: 
-      objectReference: {fileID: 1631886302}
+      objectReference: {fileID: 1015957986}
     - target: {fileID: 6442607309924949895, guid: 3defe1a944053ca4d81a138fd85ce39d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.99
